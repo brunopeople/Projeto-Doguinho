@@ -17,7 +17,7 @@ const reducer = (state = initialState, action) => {
             breedList: action.payload
         }
 
-        case actionTypes.SELECT_BREED;
+        case actionTypes.SELECT_BREED:
             return{
                 ...state,
                 imageUrl: action.payload
@@ -27,3 +27,5 @@ const reducer = (state = initialState, action) => {
             return state;
     }
 }
+
+export default reducer

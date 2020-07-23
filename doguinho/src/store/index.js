@@ -5,8 +5,10 @@ import reducer from './reducer';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(reducer,
-    composeEnhancers(
+const composeEnhacers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = create(reducer,
+    composeEnhacers(
         applyMiddleWare(sagaMiddleware)
     )
 );

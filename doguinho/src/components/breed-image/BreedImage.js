@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {receiveImage} from '../../store/actions';
+import { receiveImage } from '../../store/action';
 import './breed-image.css';
 
 const mapStateProps = state => {
@@ -11,9 +11,9 @@ const mapStateProps = state => {
     };
 }
 
-const mapDispatchProps = dispatch => {
+const mapDispatchToProps = dispatch => {
     return {
-        getImage: () => dispatch(receiverImage()),
+        getImage: () => dispatch(receiveImage()),
     };
 }
 
@@ -23,7 +23,7 @@ class BreedImage extends Component {
     }
 
     render() {
-        console.log(" Eu selecionei um raça", this.selBreed )
+        console.log(" Eu selecionei uma raça", this.selBreed )
         return(
             <div className="image-container">
                 <img
